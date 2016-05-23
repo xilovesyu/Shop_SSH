@@ -1,0 +1,24 @@
+1.配置spring 
+2.配置hibernate 配置文件和jar包
+	生成HibernateSessionFactory工具类
+	 创建表 然后 逆向解析生成model 和hbm.xml
+	在使用new 关键字做service时，会出错，bean validate应该设置为关闭
+3.spring 和 hibernate整合（采用AOP来管理事务）
+	1.配置文件和相应的jar包，添加spring-aop的包，spring-persistence，c3p0
+	2.配置applicationContext-public。xml中添加数据源
+	3.配置sessionFactory
+	4.配置事务管理器，管理sessionFactory
+	5.配置通知（advice） （tx前缀）指定了哪些方法
+	6.配置aop （切面） 《aop：conf
+	7.让Service 交给Spring管理
+
+4.搭建struts2开发环境
+	1.配置struts2
+	2.通过jsp访问action
+	
+5.整合spring+struts2
+	1.加spring-web
+	2.
+	
+	
+	
