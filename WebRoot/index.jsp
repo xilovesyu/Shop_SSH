@@ -8,7 +8,9 @@
   <body>
   	test for index.jsp
   	<br>
-  	<a href="account_aindex.action">查询account，跳转管理员主页面</a>
+  	<a href="send_main_aindex.action">查询account，跳转管理员主页面EasyUI</a>
+  	<br>
+  	<a href="send_main_index.action">查询account，跳转管理员主页面,div</a>
   	<br>
   	<a href="${pageContext.request.contextPath}/category_update.action?category.id=1&category.type=ssh_test&category.hot=true">访问update</a> 
   	<br>
