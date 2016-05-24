@@ -9,25 +9,26 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import com.xixi.model.Category;
 import com.xixi.service.CategoryService;
-
-public class CategoryAction extends BaseAction{
-	private CategoryService categoryService;
-	private Category category;
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-	public Category getCategory() {
-		return category;
-	}
-	public void setCategoryService(CategoryService categoryService) {
-		this.categoryService = categoryService;
-	}
+/*
+ * Model driven 此接口需要实现getModel方法
+ * */
+public class CategoryAction extends BaseAction<Category>{
+	
+//	private Category category;
+//	public void setCategory(Category category) {
+//		this.category = category;
+//	}
+//	public Category getCategory() {
+//		return category;
+//	}
+	
 	public String update(){
 		System.out.println("*****");
 		System.out.println(categoryService);
-		categoryService.update(category);
+		categoryService.update(model);
 		return "index";
 	}
 	
@@ -48,7 +49,13 @@ public class CategoryAction extends BaseAction{
 		applicationMap.put("categoryList", categoryService.getAll());
 		return "index";
 	}
-	
+//	@Override
+//	public Category getModel() {
+//		// TODO Auto-generated method stub
+//		category=new Category();
+//		return category;
+//	}
+//	
 //	
 //	private Map<String,Object> requestMap;
 //	private Map<String,Object> sessionMap;
