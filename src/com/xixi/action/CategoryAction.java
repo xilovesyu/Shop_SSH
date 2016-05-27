@@ -5,6 +5,8 @@ import java.util.Map;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
@@ -15,6 +17,8 @@ import com.xixi.service.CategoryService;
 /*
  * Model driven 此接口需要实现getModel方法
  * */
+@Controller
+@Scope("prototype")
 public class CategoryAction extends BaseAction<Category>{
 	
 //	private Category category;

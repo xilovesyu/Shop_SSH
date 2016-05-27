@@ -3,14 +3,21 @@ package com.xixi.service.impl;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
 
 import com.xixi.service.BaseService;
 @SuppressWarnings("unchecked")
+@Service("BaseService")
+@Lazy(true)
 public class BaseServiceImpl<T> implements BaseService<T>{
 	
 	protected Class claz;
+	@Resource //默认名称sessionFactory
 	protected   SessionFactory sessionFactory;
 	
 	//得到父类的泛型信息
@@ -21,9 +28,9 @@ public class BaseServiceImpl<T> implements BaseService<T>{
 	protected  Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
+//	public void setSessionFactory(SessionFactory sessionFactory) {
+//		this.sessionFactory = sessionFactory;
+//	}
 	@Override
 	public void save(T t) {
 		// TODO Auto-generated method stub

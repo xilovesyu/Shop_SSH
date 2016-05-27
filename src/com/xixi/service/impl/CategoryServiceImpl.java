@@ -5,11 +5,13 @@ import java.util.List;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
 import com.xixi.model.Category;
 import com.xixi.service.CategoryService;
 import com.xixi.util.HibernateSessionFactory;
 
+@Service("CategoryService")
 public class CategoryServiceImpl extends BaseServiceImpl<Category> implements CategoryService {
 
 	public CategoryServiceImpl() {

@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
 import com.xixi.model.Account;
 import com.xixi.model.Category;
@@ -12,6 +13,7 @@ import com.xixi.service.AccountService;
 import com.xixi.service.CategoryService;
 import com.xixi.util.HibernateSessionFactory;
 
+@Service("AccountService")
 public class AccountServiceImpl extends BaseServiceImpl<Account> implements AccountService {
 
 	public AccountServiceImpl() {
