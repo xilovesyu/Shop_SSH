@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.xixi.model.Category;
 import com.xixi.service.CategoryService;
 import com.xixi.util.HibernateSessionFactory;
-
+@SuppressWarnings("unchecked")
 @Service("CategoryService")
 public class CategoryServiceImpl extends BaseServiceImpl<Category> implements CategoryService {
 
@@ -19,6 +19,15 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
 		// TODO Auto-generated constructor stub
 	}
 
+	//查询类别信息，级联查询
+
+	public List<Category> queryJoinAccount(String type,int page,int size){
+		return getSession().createQuery("from Category c LEFT JOIN FETCH c.account  where c.type LIKE :type")
+		.setString("type","%"+type+"%")
+		.setFirstResult((page-1)*size)
+		.setMaxResults(size)
+		.list();
+	}
 //	private SessionFactory sessionFactory;
 //	
 //	protected  Session getSession() {

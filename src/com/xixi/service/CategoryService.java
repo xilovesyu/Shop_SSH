@@ -10,4 +10,5 @@ public interface CategoryService extends BaseService<Category>{
 //	public void delete(int id);
 //	public Category get(int id);
 //	public List<Category> getAll();
+	public List<Category> queryJoinAccount(String type,int page,int size);
 }
