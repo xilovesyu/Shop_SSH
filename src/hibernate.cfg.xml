@@ -26,7 +26,8 @@
 			none
 		</property>
 		<mapping resource="com/xixi/model/Category.hbm.xml" />
-		<mapping resource="com/xixi/model/Account.hbm.xml" /><!-- 包含Category -->
+		<mapping resource="com/xixi/model/Account.hbm.xml" />
+		<mapping resource="com/xixi/model/Product.hbm.xml" /><!-- 包含Category -->
 
 	</session-factory>
 

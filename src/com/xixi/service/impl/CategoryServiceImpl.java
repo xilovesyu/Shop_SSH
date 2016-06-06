@@ -22,7 +22,7 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
 	//查询类别信息，级联查询
 
 	public List<Category> queryJoinAccount(String type,int page,int size){
-		return getSession().createQuery("from Category c LEFT JOIN FETCH c.account  where c.type LIKE :type")
+		return getSession().createQuery("from Category c LEFT JOIN FETCH c.account  where c.type LIKE :type order by c.id")
 		.setString("type","%"+type+"%")
 		.setFirstResult((page-1)*size)
 		.setMaxResults(size)
@@ -85,4 +85,18 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
 //		String hql="FROM Category";
 //		return getSession().createQuery(hql).list();
 //	}
+
+	@Override
+	public Long getCount(String type) {
+		// TODO Auto-generated method stub
+		String hql="select count(c) from Category c where c.type like :type";
+		return (Long)getSession().createQuery(hql).setString("type", "%"+type+"%").uniqueResult();
+	}
+
+	@Override
+	public void deleteByIds(String ids) {
+		// TODO Auto-generated method stub
+		String hql="delete from Category where id in ("+ ids +")";
+		getSession().createQuery(hql).executeUpdate();
+	}
 }

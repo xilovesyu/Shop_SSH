@@ -1,5 +1,7 @@
 package com.xixi.action;
 
+import java.util.ArrayList;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
@@ -10,11 +12,9 @@ import com.xixi.model.Account;
 @Controller
 @Scope("prototype")
 public class AccountAction extends BaseAction<Account>{
-	public String update(){
-		System.out.println("*****");
-		System.out.println(accountService);
+	public void update(){
 		accountService.update(model);
-		return "index";
+		return;
 	}
 	
 	public String save(){
@@ -23,10 +23,9 @@ public class AccountAction extends BaseAction<Account>{
 	}
 	
 	public String query(){
-		requestMap.put("accountList", accountService.getAll());
-		sessionMap.put("accountList", accountService.getAll());
-		applicationMap.put("accountList", accountService.getAll());
-		return "index";
+		jsonList=new ArrayList<Account>();
+		jsonList=accountService.getAll();
+		return "jsonList";
 	}
 	
 	

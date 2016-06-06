@@ -45,9 +45,8 @@
 				$("#tt").tabs("add",{
 					title:text,
 					closable:true,
-					content:'<iframe src="send_category_query.action" frameborder="0" width="100%" height="100%"/>'
+					content:'<iframe title='+text+' src="'+ href +'" frameborder="0" width="100%" height="100%"/>'
 					//href:'send_category_query.action'
-					
 				});
 			}
 		});
@@ -62,7 +61,7 @@
 			<div title="基本操作">
 				<ul>
 					<li><a href="#" title="send_category_query.action">类别管理</a></li>
-					<li><a href="#">商品管理</a></li>
+					<li><a href="#" title="send_product_query.action">商品管理</a></li>
 				</ul>
 			</div>
 			<div title="其他操作">
@@ -81,5 +80,6 @@
 			</div>
 		</div>
 	</div>
+	<div id="win" data-options="collapsible:false,minizable:false,maximizable:false,modal:true"></div>
 </body>
 </html>

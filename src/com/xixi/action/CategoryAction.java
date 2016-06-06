@@ -1,7 +1,11 @@
 package com.xixi.action;
 
+import java.io.ByteArrayInputStream;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
@@ -21,38 +25,51 @@ import com.xixi.service.CategoryService;
 @Scope("prototype")
 public class CategoryAction extends BaseAction<Category>{
 	
-//	private Category category;
-//	public void setCategory(Category category) {
-//		this.category = category;
-//	}
-//	public Category getCategory() {
-//		return category;
-//	}
 	
-	public String update(){
-		System.out.println("*****");
-		System.out.println(categoryService);
-		categoryService.update(model);
-		return "index";
+	public String queryJoinAccount(){
+		System.out.println("TYPE:"+model.getType());
+		//所有查询的要求
+		List<Category> categorys=categoryService.queryJoinAccount(model.getType(), page, rows);
+		//总记录数
+		Long total=categoryService.getCount(model.getType());
+		pagemap=new HashMap<String,Object>();
+		pagemap.put("rows", categorys);
+		pagemap.put("total", total);
+		return "jsonMap";
 	}
-	
-	public String save(){
-		System.out.println("******save");
-		return "save";
-	}
-	
-	public String query(){
-		//取代内置对象
-//		ActionContext.getContext().put("categoryList", categoryService.getAll());
-//		ActionContext.getContext().getSession().put("categoryList", categoryService.getAll());
-//		ActionContext.getContext().getApplication().put("categoryList", categoryService.getAll());
+	public String deleteByIds(){
+		System.out.println("删除id编号为："+ids);
+		categoryService.deleteByIds(ids);
+		inputStream=new ByteArrayInputStream("true".getBytes());
 		
-		//method 2 implements RequestMap, SessionMap ,ApplicationMap
-		requestMap.put("categoryList", categoryService.getAll());
-		sessionMap.put("categoryList", categoryService.getAll());
-		applicationMap.put("categoryList", categoryService.getAll());
-		return "index";
+		return "stream";
 	}
+	public void save(){
+		categoryService.save(model);
+	}
+	public void update(){
+		categoryService.update(model);
+		return ;
+	}
+	public String query(){
+		jsonList=categoryService.getAll();
+		return "jsonList";
+	}
+//	
+
+//	
+//	public String query(){
+//		//取代内置对象
+////		ActionContext.getContext().put("categoryList", categoryService.getAll());
+////		ActionContext.getContext().getSession().put("categoryList", categoryService.getAll());
+////		ActionContext.getContext().getApplication().put("categoryList", categoryService.getAll());
+//		
+//		//method 2 implements RequestMap, SessionMap ,ApplicationMap
+//		requestMap.put("categoryList", categoryService.getAll());
+//		sessionMap.put("categoryList", categoryService.getAll());
+//		applicationMap.put("categoryList", categoryService.getAll());
+//		return "index";
+//	}
 //	@Override
 //	public Category getModel() {
 //		// TODO Auto-generated method stub

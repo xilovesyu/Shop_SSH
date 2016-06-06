@@ -57,4 +57,15 @@ public class CategoryServiceImplTest {
 		}
 		
 	}
+	
+	@Test
+	public void testGetCount(){
+		System.out.println(categoryService.getCount(""));
+	}
+	
+	@Test
+	public void testDelteByIds(){
+		String ids="4,5,6";
+		categoryService.deleteByIds(ids);
+	}
 }
