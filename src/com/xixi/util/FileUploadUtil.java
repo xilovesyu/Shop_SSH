@@ -6,11 +6,22 @@ import java.util.UUID;
 
 import org.apache.commons.io.FilenameUtils;
 import org.aspectj.util.FileUtil;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.xixi.model.FileModel;
 @Component("fileUpload")
 public class FileUploadUtil implements FileUpload{
+	@Value("#{prop.filePath}")
+	private String filePath;
+	
+	public String getFilePath() {
+		return filePath;
+	}
+	public void setFilePath(String filePath) {
+		System.out.println("set filePath function");
+		this.filePath = filePath;
+	}
 	private String getFileExtensionName(String name){
 		return FilenameUtils.getExtension(name);
 	}
@@ -21,7 +32,7 @@ public class FileUploadUtil implements FileUpload{
 	}
 	//3.实现文件的上传功能，返回新的文件名称
 	@Override
-	public String uploadFile(String filePath,FileModel filemodel){
+	public String uploadFile(FileModel filemodel){
 		//获取新的唯一名
 		String file=newFileName(filemodel.getFilename());
 		try {

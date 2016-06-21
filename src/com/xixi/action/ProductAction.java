@@ -28,8 +28,12 @@ public class ProductAction extends BaseAction<Product> {
 	public void save() throws IOException{
 		System.out.println("---save product model---");
 		//实现文件上传的功能
-		String pic=fileUpload.uploadFile("K://", fileModel);
+		String pic=fileUpload.uploadFile(fileModel);
 		model.setPic(pic);
 		productService.save(model);
+	}
+	public String get(){
+		requestMap.put("product", productService.get(model.getId()));
+		return "detail";
 	}
 }

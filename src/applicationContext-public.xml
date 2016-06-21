@@ -13,13 +13,20 @@
 	">
 	<!-- 以上context配置注解扫描 -->
 	<context:component-scan base-package="com.xixi.."></context:component-scan>
-	<!--  <bean id="date" class="java.util.Date"/>-->
-	<!-- 配置数据源 -->
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/shop?useUnicode=true&amp;characterEncoding=UTF-8"></property>
-		<property name="user" value="root"></property>
-		<property name="password" value="xyxx1231"></property>
+	<bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<array>
+				<value>classpath:public.properties</value>
+			</array>
+		</property>
+	</bean>
+	<!-- 配置数据源,使用properties 配置文件 -->
+	<context:property-placeholder location="classpath:conn.properties"/>
+	<bean id="dataSource" class="${dataSource}">
+		<property name="driverClass" value="${driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbcUrl}"></property>
+		<property name="user" value="${user}"></property>
+		<property name="password" value="${password}"></property>
 	</bean>
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>

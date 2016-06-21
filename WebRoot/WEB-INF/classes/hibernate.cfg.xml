@@ -25,10 +25,18 @@
 		<property name="javax.persistence.validation.mode">
 			none
 		</property>
+		<!-- 额配置提供商 -->
+		<property name="hibernate.cache.provider_class">
+			org.hibernate.cache.EhCacheProvider
+		</property>
 		<mapping resource="com/xixi/model/Category.hbm.xml" />
 		<mapping resource="com/xixi/model/Account.hbm.xml" />
-		<mapping resource="com/xixi/model/Product.hbm.xml" /><!-- 包含Category -->
-
+		<mapping resource="com/xixi/model/Product.hbm.xml" />
+		<mapping resource="com/xixi/model/Sorder.hbm.xml" />
+		<mapping resource="com/xixi/model/User.hbm.xml" />
+		<mapping resource="com/xixi/model/Status.hbm.xml" />
+		<mapping resource="com/xixi/model/Forder.hbm.xml" /><!-- 包含Category -->
+		<class-cache usage="read-write" class="com.xixi.model.Product" />
 	</session-factory>
 
 </hibernate-configuration>

@@ -46,6 +46,7 @@
 					rows\[\d+\]\.date
 				</param>
 			</result>
+			<result name="detail">/detail.jsp</result>
 		</action>
 		<!--  -->
 		<action name="send_*_*" class="com.xixi.action.SendAction">

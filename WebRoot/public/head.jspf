@@ -7,6 +7,13 @@
 <!-- easyui 的库 -->
 <link rel="stylesheet" href="${shop}/jquery-easyui-1.3.5/themes/default/easyui.css" type="text/css"></link>
 <link rel="stylesheet" href="${shop}/jquery-easyui-1.3.5/themes/icon.css" type="text/css"></link>
+<!-- <link rel="stylesheet" href="${shop}/css/public.css" />
+<link rel="stylesheet" href="${shop}/css/style.css" />-->
+<link rel="stylesheet" href="${shop}/css/detail.css" type="text/css"></link>
+<link rel="stylesheet" href="${shop}/css/public.css" type="text/css"></link>
+<link rel="stylesheet" href="${shop}/css/style.css" type="text/css"></link>
+
+
 
 <script type="text/javascript" src="${shop}/jquery-easyui-1.3.5/jquery.min.js"></script>
 <script type="text/javascript" src="${shop}/jquery-easyui-1.3.5/jquery.easyui.min.js"></script>

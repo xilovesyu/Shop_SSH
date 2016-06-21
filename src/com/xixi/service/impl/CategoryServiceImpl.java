@@ -99,4 +99,12 @@ public class CategoryServiceImpl extends BaseServiceImpl<Category> implements Ca
 		String hql="delete from Category where id in ("+ ids +")";
 		getSession().createQuery(hql).executeUpdate();
 	}
+
+	@Override
+	public List<Category> queryByHot(boolean hot) {
+		// TODO Auto-generated method stub
+		String hql="from Category c where c.hot=:hot";
+		return getSession().createQuery(hql).setBoolean("hot", hot).list();
+		
+	}
 }

@@ -35,4 +35,14 @@ public class ProductServiceImpl extends BaseServiceImpl<Product> implements Prod
 		String hql="select count(p) from Product p where p.name like :name";
 		return (Long)getSession().createQuery(hql).setString("name", "%"+name+"%").uniqueResult();
 	}
+
+	@Override
+	public List<Product> queryByCid(int cid) {
+		// TODO Auto-generated method stub
+		String hql="from Product p join fetch p.category where p.commend=true and  p.available=true  and p.category.id= :cid order by p.date desc";
+		return getSession().createQuery(hql).setInteger("cid", cid)
+		.setFirstResult(0)
+		.setMaxResults(4)
+		.list();
+	}
 }

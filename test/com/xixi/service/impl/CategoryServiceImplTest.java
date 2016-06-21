@@ -12,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.xixi.model.Category;
+import com.xixi.model.Product;
 import com.xixi.service.CategoryService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -67,5 +68,12 @@ public class CategoryServiceImplTest {
 	public void testDelteByIds(){
 		String ids="4,5,6";
 		categoryService.deleteByIds(ids);
+	}
+	@Test
+	public void testGetHot(){
+		List<Category> lists=categoryService.queryByHot(true);
+		for (Category category : lists) {
+			System.out.println(category);
+		}
 	}
 }
