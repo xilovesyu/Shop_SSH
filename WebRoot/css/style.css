@@ -1,4 +1,4 @@
-/*瀵艰埅鑿滃崟*/
+
 .navigation_container{ border:solid rgb(180,132,132); border-width:1px 0px 3px 0px; }
 .nav .primary_nav{ display:inline-block; margin:5px 2px 3px 0px; position:relative; }
 .nav .primary_nav li{ float:left; }
@@ -10,7 +10,6 @@
 .nav .sub_menu{ display: none; }
 .nav .primary_nav .active { background-color:#f38256; }
 
-/*浜岀骇鑿滃崟*/
 ul.sub_menu{ position:absolute; top:40px; left:-4000px; background-color: rgba(255, 255, 255, 0.93); background:#fff\9; padding:15px 0px; z-index:100; width:980px; box-shadow:0px 5px 6px #999; border-top:solid 3px; }
 .nav .primary_nav > li:hover > ul{ left:0px; }
 ul.sub_menu > li{ width:210px; margin-left:30px; }
@@ -21,7 +20,7 @@ ul.sub_menu > li > ul > li:first-child{ padding-top:10px; }
 ul.sub_menu > li > ul > li:hover a{ font-weight:bold; }
 ul.sub_menu > li > ul{ border-top: solid 1px #5f5a56; margin-top:10px; }
 
-/*涓婚閮ㄥ垎*/
+
 #side_nav{ width:200px; float:left; margin-top:12px; height: auto; overflow: hidden; }
 #side_nav h1{ font-size:27px; font-weight:normal; color:#544f4b; line-height:40px; padding-bottom:6px; }
 .sideNavCategories{ display:inline-block; width:100%; }
@@ -32,7 +31,7 @@ ul.sub_menu > li > ul{ border-top: solid 1px #5f5a56; margin-top:10px; }
 .sideNavCategories > ul.departments > li > a{ background:url(../image/arrow.png) no-repeat right -3px; }
 .sideNavCategories > ul.departments > li:hover a{ color:#f38256; background-position:right -53px; text-indent:10px; -moz-transition:all 0.2s ease-out 0s; -webkit-transition: all 0.2s ease-out; font-weight:bold; }
 
-/*浜у搧鍒楄〃*/
+
 .products_list{ width: 980px; }
 .products_list { margin: 0 auto; margin-bottom: 17px; border-bottom: solid 2px #AA5353; }
 h2.sub_title { font-size: 18px; color: #312e2b; font-weight: normal; padding-bottom: 12px; padding-top: 25px; text-transform: uppercase; }
@@ -58,14 +57,13 @@ h2.sub_title { font-size: 18px; color: #312e2b; font-weight: normal; padding-bot
 #main_content { width: 780px; float: right; margin-top: 17px; }
 #main_content img{ width:780px; height:370px; }
 
-/*闈㈠寘灞�/
+
 ul.breadcrumb { padding: 12px 0px; width: 100%; }
 ul.breadcrumb li:first-child { padding-left: 0px; background: none; }
-ul.breadcrumb li { padding: 0px 14px; font-size: 11px; text-transform: uppercase; display: inline-block; list-style: none; background: url(../images/arrow.png) no-repeat -10px -3px; }
+ul.breadcrumb li { padding: 0px 14px; font-size: 11px; text-transform: uppercase; display: inline-block; list-style: none; background: url(../image/arrow.png) no-repeat -10px -3px; }
 ul.breadcrumb li.active { background-position: -10px -53px; }
 ul.breadcrumb li.active a { color:#f38256; }
 
-/*璇︽儏椤�/
 .product_leftcol { width: 360px; float: left; }
 .product_rightcol { width: 590px; float: right; }
 #name { padding-bottom: 10px; border-bottom: 1px dotted #CCC; zoom: 1; }
@@ -87,22 +85,22 @@ ul.breadcrumb li.active a { color:#f38256; }
 
 #choose-amount .text { width: 30px; height: 16px; border: 1px solid #ccc; padding: 2px; text-align: center; }
 .wrap-input a { display: block; }
-.btn-reduce{ width:15px; height:15px; left:90px; background: url("../images/newicon.png") no-repeat 0  0; }
-.btn-add{ width:15px; height:15px; left:160px; background: url("../images/newicon.png") no-repeat -16px 0px; }
+.btn-reduce{ width:15px; height:15px; left:90px; background: url("../image/newicon.png") no-repeat 0  0; }
+.btn-add{ width:15px; height:15px; left:160px; background: url("../image/newicon.png") no-repeat -16px 0px; }
 .add_to_buttons { width: 100%; padding: 25px 0px; }
-.product_rightcol .add_to_buttons button.add_cart { padding: 17px 85px 17px 25px; font-size: 18px; font-weight: bold!important; color:#494949; text-transform: uppercase; border: 0px; cursor: pointer; background: #f38256 url(../images/addtocart.png) no-repeat 137px center; }
+.product_rightcol .add_to_buttons button.add_cart { padding: 17px 85px 17px 25px; font-size: 18px; font-weight: bold!important; color:#494949; text-transform: uppercase; border: 0px; cursor: pointer; background: #f38256 url(../image/addtocart.png) no-repeat 137px center; }
 
 
-/*璐墿杞�/
+
 .message { padding: 20px 85px; font-size: 14px; line-height: 100%; margin-bottom: 15px; }
-.message.success { color: #91a158; background: url(../images/message_cart.png) no-repeat 15px center #f9fff1; border: solid 1px #dcedbf; }
+.message.success { color: #91a158; background: url(../image/message_cart.png) no-repeat 15px center #f9fff1; border: solid 1px #dcedbf; }
 .cart-table{ width: 100%; margin: 10px 0; }
 .cart-table tr{ width: 40px; }
 .cart-table, th, td{ border: 1px solid #E8E8E8; border-collapse:collapse; }
 .cart-table .align_center{ text-align: center; }
 .cart-table .align_left{ text-align: left; }
 .cart-table .pr_name{ vertical-align: middle; }
-.cart-table tr td a.remove { display: block; width: 17px; height: 17px; background: url(../images/remove.png) no-repeat -1px -1px #fff; margin: auto; }
+.cart-table tr td a.remove { display: block; width: 17px; height: 17px; background: url(../image/remove.png) no-repeat -1px -1px #fff; margin: auto; }
 .cart-table tr td a.remove:hover{ background-position:-1px -18px; background-color: #f38256}
 
 .wrap-input { position: relative; width: 36px; padding: 0 115px; }
@@ -111,7 +109,7 @@ ul.breadcrumb li.active a { color:#f38256; }
 .text { width: 30px; height: 16px; border: 1px solid #ccc; padding: 2px; text-align: center; }
 .wrap-input a { display: block; }
 
-/*鎬昏*/
+
 .totals { float: right; display: inline-block; width: 100%; padding: 17px 0px; overflow: hidden; margin-right: 20px; }
 #totals-table { width: 24%; float: right; font-size: 14px; color: #544f4b; }
 #totals-table td { padding: 8px 0px; }
@@ -123,7 +121,6 @@ ul.breadcrumb li.active a { color:#f38256; }
 .action_buttonbar button { color: #fff; font-size: 14px; font-weight: bold; padding: 8px 14px; background: #544F4B; border: 0px; line-height: 100%; cursor: pointer; margin-left: 10px; }
 
 
-/*纭椤甸潰*/
 .check{ border: 1px solid #E8E8E8; margin-bottom: 20px; }
 .check h1{color: #fff; height:40px; line-height:40px; font-size: 18px; font-weight:normal; background: #544f4b; padding-left: 20px; }
 .person-checkinner,.address-checkinner  { padding: 20px; line-height: 32px; }
@@ -133,13 +130,13 @@ th{ height: 40px; }
 .pro-check .sum{ height: 40px; background-color:  #f38256; line-height: 40px; padding-right: 20px; }
 .pro-check .sum b{ color: #fff; }
 
-/*鐣欒█*/
+
 .leave-mes p{ height: 40px; line-height: 40px; }
 .leave-mes textarea{height: 60px;width: 70%;margin-bottom: 20px;}
 .submit{width: 100%;height: 40px;background-color: #544f4b; }
 .submit .sub-logo{width: 150px;height: 100%;background-color:#f38256; font-weight: bold;color: white;text-align: center;line-height: 40px;}
 
-/*瀹屾垚璁㈠崟*/
+
 .pay-step{border: 1px solid #E8E8E8;}
 .pay-step .check{border:none;border-bottom: 1px solid #E8E8E8;margin-bottom:0;}
 

@@ -38,7 +38,7 @@
         <many-to-one name="status" class="Status">
         	<column name="sid"/>
         </many-to-one>
-        <set name="soderSet">
+        <set name="sorderSet">
         	<key>
         		<column name="fid"/>
         	</key>

@@ -10,6 +10,10 @@ public class Product implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5784889632337129813L;
 	private Integer id;
 	private String name;
 	private Double price;

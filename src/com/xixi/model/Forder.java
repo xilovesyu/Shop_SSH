@@ -11,6 +11,10 @@ public class Forder implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3780723622969105321L;
 	private Integer id;
 	private String name;
 	private String phone;
@@ -21,7 +25,7 @@ public class Forder implements java.io.Serializable {
 	private String address;
 	private User user;
 	private Status status;
-	private Set<Sorder> soderSet;
+	private Set<Sorder> sorderSet;
 	// Constructors
 
 	/** default constructor */
@@ -31,6 +35,11 @@ public class Forder implements java.io.Serializable {
 	/** minimal constructor */
 	public Forder(Timestamp date) {
 		this.date = date;
+	}
+	
+	public Forder(Set<Sorder> sorderSet) {
+		super();
+		this.sorderSet = sorderSet;
 	}
 
 	/** full constructor */
@@ -129,12 +138,12 @@ public class Forder implements java.io.Serializable {
 		this.status = status;
 	}
 
-	public Set<Sorder> getSoderSet() {
-		return soderSet;
+	public Set<Sorder> getSorderSet() {
+		return sorderSet;
 	}
 
-	public void setSoderSet(Set<Sorder> soderSet) {
-		this.soderSet = soderSet;
+	public void setSorderSet(Set<Sorder> sorderSet) {
+		this.sorderSet = sorderSet;
 	}
 
 }

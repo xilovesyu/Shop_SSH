@@ -8,6 +8,10 @@ public class Status implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -885275358332798060L;
 	private Integer id;
 	private String status;
 

@@ -8,6 +8,10 @@ public class Sorder implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3517615153890069726L;
 	private Integer id;
 	private String name;
 	private Double price;

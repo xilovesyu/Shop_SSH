@@ -48,6 +48,9 @@
 			</result>
 			<result name="detail">/detail.jsp</result>
 		</action>
+		<action name="sorder_*" class="sorderAction" method="{1}">
+			<result name="showCar">/showCar.jsp</result>
+		</action>
 		<!--  -->
 		<action name="send_*_*" class="com.xixi.action.SendAction">
 			<result name="send">/WEB-INF/{1}/{2}.jsp</result>

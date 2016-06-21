@@ -18,7 +18,9 @@ import com.opensymphony.xwork2.ModelDriven;
 import com.xixi.model.FileModel;
 import com.xixi.service.AccountService;
 import com.xixi.service.CategoryService;
+import com.xixi.service.ForderService;
 import com.xixi.service.ProductService;
+import com.xixi.service.SorderService;
 import com.xixi.util.FileUploadUtil;
 
 @Controller("baseAction")
@@ -43,6 +45,10 @@ public class BaseAction<T> extends ActionSupport implements RequestAware,Session
 	protected AccountService accountService;
 	@Resource
 	protected ProductService productService;
+	@Resource
+	protected ForderService forderService;
+	@Resource
+	protected SorderService sorderService;
 	@Resource
 	protected FileUploadUtil fileUpload;
 	//注解不需要set方法

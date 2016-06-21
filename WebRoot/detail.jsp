@@ -205,7 +205,7 @@
 						<li id="summary-price">
 							<div class="dt">折&nbsp;后&nbsp;价：</div>
 							<div class="dd">
-								<strong class="p-price" id="jd-price">￥89.00</strong>
+								<strong class="p-price" id="jd-price">${product.price}</strong>
 							</div>
 						</li>
 					</ul>
@@ -253,9 +253,11 @@
 						</li>
 					</ul>
 					<div class="add_to_buttons">
-						<button class="add_cart">
-							<a href="${shop}/sorder_addSorder.action?id=${porduct.id}">加入购物车</a>
-						</button>
+						<label >
+							<button class="add_cart">
+								<a href="${shop}/sorder_addSorder.action?product.id=${product.id}">加入购物车</a>
+							</button>
+						</label>
 					</div>
 				</div>
 				<!--详情右侧结束-->

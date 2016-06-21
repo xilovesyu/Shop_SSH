@@ -8,6 +8,10 @@ public class User implements java.io.Serializable {
 
 	// Fields
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6069613924626904529L;
 	private Integer id;
 	private String login;
 	private String name;
