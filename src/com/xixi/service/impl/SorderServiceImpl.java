@@ -15,6 +15,7 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements Sorder
 		boolean isHave=false;
 		Sorder sorder=productToSorder(product);
 		//判断是否重复，如果重复，添加数量即可
+		if(forder.getSorderSet()==null){System.out.println("-------购物项为null---------");}
 		for(Sorder oldsorder:forder.getSorderSet()){
 			if(oldsorder.getProduct().getId().equals(sorder.getProduct().getId())){
 				//购物项有重复，添加数量即可
@@ -24,6 +25,8 @@ public class SorderServiceImpl extends BaseServiceImpl<Sorder> implements Sorder
 			}
 		}
 		if(!isHave){
+			//建立购物项与购物车的关联，此时forder.id 为null
+			sorder.setForder(forder);
 			forder.getSorderSet().add(sorder);
 		}
 		return forder;

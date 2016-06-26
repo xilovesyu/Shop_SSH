@@ -8,6 +8,8 @@
 	
 		<global-results>
 			<result name="aindex">/WEB-INF/main/aindex.jsp</result>
+			<result name="index">/index.jsp</result>
+			<result name="ulogin" type="redirect">/ulogin.jsp</result>
 		</global-results>
 		<action name="category_*" class="categoryAction" method="{1}">
 			<result name="index">/index.jsp</result>
@@ -50,6 +52,12 @@
 		</action>
 		<action name="sorder_*" class="sorderAction" method="{1}">
 			<result name="showCar">/showCar.jsp</result>
+		</action>
+		<action name="forder_*" class="forderAction" method="{1}">
+			<result name="bank">/user/bank.jsp</result>
+		</action>
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="goURL" type="redirect">${#session.goURL}</result>
 		</action>
 		<!--  -->
 		<action name="send_*_*" class="com.xixi.action.SendAction">

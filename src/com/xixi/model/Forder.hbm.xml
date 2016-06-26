@@ -38,7 +38,10 @@
         <many-to-one name="status" class="Status">
         	<column name="sid"/>
         </many-to-one>
-        <set name="sorderSet">
+        <!-- 
+        	inverse="false" 反向，指定谁来维护主键
+         -->
+        <set name="sorderSet"  inverse="true" cascade="all">
         	<key>
         		<column name="fid"/>
         	</key>

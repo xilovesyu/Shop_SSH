@@ -20,7 +20,9 @@ public class Status implements java.io.Serializable {
 	/** default constructor */
 	public Status() {
 	}
-
+	public Status(int id){
+		this.id=id;
+	}
 	/** full constructor */
 	public Status(String status) {
 		this.status = status;
